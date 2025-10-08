@@ -290,20 +290,7 @@ function showComingSoon(event) {
     // Create temporary notification
     const notification = document.createElement('div');
     notification.textContent = 'Coming Soon';
-    notification.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--bg-dark);
-        color: var(--text-white);
-        padding: 0.5rem 1rem;
-        border-radius: var(--radius-sm);
-        font-size: 0.875rem;
-        z-index: 9999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
+    notification.className = 'notification';
     
     document.body.appendChild(notification);
     
