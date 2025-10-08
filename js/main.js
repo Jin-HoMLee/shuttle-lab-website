@@ -57,10 +57,20 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
+    // Add scrolled class for styling changes
     if (currentScroll > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+    
+    // Hide/show navbar based on scroll direction
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scrolling down & past threshold - hide navbar
+        navbar.classList.add('navbar-hidden');
+    } else {
+        // Scrolling up or at top - show navbar
+        navbar.classList.remove('navbar-hidden');
     }
     
     lastScroll = currentScroll;

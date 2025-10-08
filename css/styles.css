@@ -205,11 +205,16 @@ button {
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-base);
+    transform: translateY(0);
 }
 
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow-md);
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-container {
