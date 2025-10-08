@@ -256,44 +256,6 @@ backToTopButton.className = 'back-to-top';
 backToTopButton.setAttribute('aria-label', 'Back to top');
 document.body.appendChild(backToTopButton);
 
-// Style the button
-const style = document.createElement('style');
-style.textContent = `
-    .back-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-        z-index: 999;
-    }
-    
-    .back-to-top.visible {
-        display: flex;
-    }
-    
-    .back-to-top:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .back-to-top svg {
-        width: 24px;
-        height: 24px;
-    }
-`;
-document.head.appendChild(style);
-
 // Show/hide back to top button
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 500) {
