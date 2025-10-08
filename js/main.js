@@ -337,9 +337,12 @@ console.log('%c Built with modern web technologies ', 'color: #667eea; font-size
 // ===========================
 if ('performance' in window) {
     window.addEventListener('load', () => {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page load time: ${pageLoadTime}ms`);
+        const navEntries = window.performance.getEntriesByType('navigation');
+        if (navEntries && navEntries.length > 0) {
+            const navEntry = navEntries[0];
+            const pageLoadTime = navEntry.loadEventEnd - navEntry.startTime;
+            console.log(`Page load time: ${pageLoadTime}ms`);
+        }
     });
 }
 
