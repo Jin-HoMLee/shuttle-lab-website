@@ -310,6 +310,42 @@ if (footerYear) {
 }
 
 // ===========================
+// Coming Soon Functionality
+// ===========================
+function showComingSoon(event) {
+    event.preventDefault();
+    
+    // Create temporary notification
+    const notification = document.createElement('div');
+    notification.textContent = 'Coming Soon';
+    notification.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--bg-dark);
+        color: var(--text-white);
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Fade in
+    setTimeout(() => notification.style.opacity = '1', 10);
+    
+    // Remove after 1.5 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => document.body.removeChild(notification), 300);
+    }, 1500);
+}
+
+// ===========================
 // Preload Images (Optional Enhancement)
 // ===========================
 function preloadImages() {

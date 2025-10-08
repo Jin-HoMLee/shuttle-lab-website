@@ -929,6 +929,17 @@ button {
     height: 20px;
 }
 
+/* Coming Soon social links */
+.social-link.coming-soon {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.social-link.coming-soon:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
 .footer-heading {
     font-size: 1.125rem;
     font-weight: 700;
