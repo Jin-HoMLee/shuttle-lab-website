@@ -335,15 +335,35 @@ console.log('%c Built with modern web technologies ', 'color: #667eea; font-size
 // ===========================
 // Performance Monitoring (Optional)
 // ===========================
-if ('performance' in window) {
-    window.addEventListener('load', () => {
-        const navEntries = window.performance.getEntriesByType('navigation');
-        if (navEntries && navEntries.length > 0) {
-            const navEntry = navEntries[0];
-            const pageLoadTime = navEntry.loadEventEnd - navEntry.startTime;
-            console.log(`Page load time: ${pageLoadTime}ms`);
-        }
+if ('performance' in window && 'PerformanceObserver' in window) {
+    const perfObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach(entry => {
+            if (entry.entryType === 'navigation') {
+                // This fires when all timing data is actually available
+                const fullLoadTime = entry.loadEventEnd - entry.startTime;
+                console.log(`⚡ Complete page load time: ${fullLoadTime}ms`);
+                
+                // Detailed performance breakdown
+                console.log(`📊 Performance breakdown:`, {
+                    'DNS Lookup': `${entry.domainLookupEnd - entry.domainLookupStart}ms`,
+                    'Connection': `${entry.connectEnd - entry.connectStart}ms`,
+                    'Response': `${entry.responseEnd - entry.responseStart}ms`,
+                    'DOM Processing': `${entry.domComplete - entry.domLoading}ms`,
+                    'Load Event': `${entry.loadEventEnd - entry.loadEventStart}ms`
+                });
+                
+                // Key milestones
+                console.log(`🎯 Key milestones:`, {
+                    'DOM Content Loaded': `${entry.domContentLoadedEventEnd - entry.startTime}ms`,
+                    'DOM Complete': `${entry.domComplete - entry.startTime}ms`,
+                    'Page Interactive': `${entry.domInteractive - entry.startTime}ms`
+                });
+            }
+        });
     });
+    
+    perfObserver.observe({ entryTypes: ['navigation'] });
 }
 
 // ===========================
