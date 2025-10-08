@@ -42,7 +42,9 @@ shuttle-lab/
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-- Node.js (optional, for development server)
+- Node.js and npm (required for development server and scripts)
+  - Download from [nodejs.org](https://nodejs.org/)
+  - Verify installation: `node --version` and `npm --version`
 
 ### Installation
 
@@ -52,22 +54,26 @@ git clone https://github.com/Jin-HoMLee/shuttle-lab.git
 cd shuttle-lab
 ```
 
-2. Open `index.html` in your browser, or use a development server:
-
+2. Install dependencies:
 ```bash
-# Using Node.js http-server
-npm start
+npm install
+```
 
-# Or using live-server
+3. Start the development server:
+```bash
+# Using modern serve (recommended)
 npm run dev
 
-# Or using Python
+# Or using http-server
+npm start
+
+# Or using Python (no dependencies needed)
 python -m http.server 8080
 
 # Or simply open index.html in your browser
 ```
 
-3. Visit `http://localhost:8080` in your browser
+4. Visit `http://localhost:8080` in your browser
 
 ## 🎨 Customization
 

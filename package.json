@@ -4,8 +4,8 @@
   "description": "Modern immersive website template with state-of-the-art design",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server -p 8080 -o",
-    "dev": "npx live-server --port=8080"
+    "start": "http-server -p 8080 -o",
+    "dev": "serve -s . -l 8080"
   },
   "keywords": [
     "website",
@@ -16,5 +16,8 @@
   ],
   "author": "",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "serve": "^14.2.1"
+  }
 }
