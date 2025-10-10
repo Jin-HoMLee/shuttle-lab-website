@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Modern immersive website template with state-of-the-art design",
   "main": "index.html",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development http-server -p 8080 -o",
-    "dev": "cross-env NODE_ENV=development serve -s . -l 8080",
-    "prod": "cross-env NODE_ENV=production http-server ./ -p 80"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
   "keywords": [
     "website",
     "template",
