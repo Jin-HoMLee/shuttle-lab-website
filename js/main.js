@@ -341,7 +341,11 @@ console.log('%c Built with modern web technologies ', 'color: #667eea; font-size
 // ===========================
 // Performance Monitoring (Optional)
 // ===========================
-if ('performance' in window && 'PerformanceObserver' in window) {
+if (
+    'performance' in window &&
+    'PerformanceObserver' in window &&
+    process.env.NODE_ENV === 'development'
+) {
     const perfObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach(entry => {
