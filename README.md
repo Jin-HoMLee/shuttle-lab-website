@@ -75,6 +75,37 @@ python -m http.server 8080
 
 4. Visit `http://localhost:8080` in your browser
 
+## ⚡ Vite Usage
+
+This project uses [Vite](https://vitejs.dev/) for a modern, lightning-fast development and build experience.
+
+### Development
+Run the development server with hot reload:
+```bash
+npm run dev
+```
+- Opens your site at `http://localhost:5173/` (default)
+- Auto-reloads on file changes
+
+### Production Build
+Create an optimized production build:
+```bash
+npm run build
+```
+- Outputs static files to the `dist/` directory
+
+### Preview Production Build
+Serve the built site locally to test the production output:
+```bash
+npm run preview
+```
+- Opens your site at `http://localhost:4173/` (default)
+- Serves files from `dist/`
+
+**Note:** Always run `npm run build` before `npm run preview`.
+
+For more details, see the [Vite documentation](https://vitejs.dev/guide/).
+
 ## 🎨 Customization
 
 ### Colors
