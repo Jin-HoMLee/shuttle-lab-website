@@ -19,7 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.1.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "vite": "^7.1.9"
   },
   "dependencies": {
     "cross-env": "^10.1.0"
