@@ -1,6 +1,12 @@
 // ===========================
 // Smooth Scrolling for Navigation Links
 // ===========================
+// Cache window width and update on resize
+let cachedWindowWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+    cachedWindowWidth = window.innerWidth;
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -21,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             
             // Close mobile menu if open
-            if (window.innerWidth <= 768) {
+            if (cachedWindowWidth <= 768) {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
             }
