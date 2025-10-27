@@ -344,7 +344,7 @@ console.log('%c Built with modern web technologies ', 'color: #667eea; font-size
 if (
     'performance' in window &&
     'PerformanceObserver' in window &&
-    import.meta.env.DEV // also works: import.meta.env.MODE === 'development'
+    import.meta.env.DEV // Enable only in development mode
 ) {
     const perfObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
