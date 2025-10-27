@@ -309,6 +309,7 @@ function showComingSoon(event) {
         setTimeout(() => document.body.removeChild(notification), 300);
     }, 1500);
 }
+window.showComingSoon = showComingSoon;
 
 // ===========================
 // Preload Images (Optional Enhancement)
