@@ -171,8 +171,8 @@ contactForm.addEventListener('submit', (e) => {
     // In a real application, you would send this data to a server
     console.log('Form submitted:', formData);
     
-    // Show success message
-    alert('Thank you for your message! We will get back to you soon.');
+    // Show success notification
+    showNotification('Thank you for your message! We will get back to you soon.');
     
     // Reset form
     contactForm.reset();
@@ -191,8 +191,8 @@ newsletterForms.forEach(form => {
         // In a real application, you would send this to a server
         console.log('Newsletter subscription:', email);
         
-        // Show success message
-        alert('Thank you for subscribing to our newsletter!');
+        // Show success notification
+        showNotification('Thank you for subscribing to our newsletter!');
         
         // Reset form
         form.reset();
@@ -288,28 +288,28 @@ if (footerYear) {
 }
 
 // ===========================
-// Coming Soon Functionality
+// Coming Soon & Notification Functionality
 // ===========================
-function showComingSoon(event) {
-    event.preventDefault();
-    
+function showNotification(message, event) {
+    if (event) event.preventDefault();
     // Create temporary notification
     const notification = document.createElement('div');
-    notification.textContent = 'Coming Soon';
+    notification.textContent = message;
     notification.className = 'notification';
-    
     document.body.appendChild(notification);
-    
     // Fade in
     setTimeout(() => notification.style.opacity = '1', 10);
-    
     // Remove after 1.5 seconds
     setTimeout(() => {
         notification.style.opacity = '0';
         setTimeout(() => document.body.removeChild(notification), 300);
     }, 1500);
 }
-window.showComingSoon = showComingSoon;
+window.showNotification = showNotification; // Make globally accessible
+
+window.showComingSoon = function(event) { 
+    showNotification('Coming Soon', event);
+}; // Convenience function for "Coming Soon" notifications
 
 // ===========================
 // Preload Images (Optional Enhancement)
