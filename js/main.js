@@ -7,6 +7,14 @@ window.addEventListener('resize', () => {
     cachedWindowWidth = window.innerWidth;
 });
 
+// Mobile navigation elements
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const navbar = document.getElementById('navbar');
+
+// ===========================
+// Smooth Scrolling for Navigation Links
+// ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -38,9 +46,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===========================
 // Mobile Navigation Toggle
 // ===========================
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
@@ -57,7 +62,6 @@ document.addEventListener('click', (e) => {
 // ===========================
 // Navbar Scroll Effect
 // ===========================
-const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
