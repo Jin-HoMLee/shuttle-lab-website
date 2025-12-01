@@ -12,9 +12,7 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navbar = document.getElementById('navbar');
 
-// ===========================
-// Smooth Scrolling for Navigation Links
-// ===========================
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
