@@ -304,7 +304,7 @@ function showNotification(message, event) {
     // Remove after 1.5 seconds
     setTimeout(() => {
         notification.style.opacity = '0';
-        setTimeout(() => document.body.removeChild(notification), 300);
+        setTimeout(() => notification.remove(), 300);
     }, 1500);
 }
 window.showNotification = showNotification; // Make globally accessible
