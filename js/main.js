@@ -245,7 +245,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxSpeed = 0.5;
     
-    if (heroContent && scrolled < hero.offsetHeight) {
+    if (heroContent && hero && scrolled < hero.offsetHeight) {
         heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
         heroContent.style.opacity = 1 - (scrolled / hero.offsetHeight);
     }
