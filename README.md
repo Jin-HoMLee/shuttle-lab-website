@@ -63,17 +63,9 @@ npm install
 ```bash
 # Using modern serve (recommended)
 npm run dev
-
-# Or using http-server
-npm start
-
-# Or using Python (no dependencies needed)
-python -m http.server 8080
-
-# Or simply open index.html in your browser
 ```
 
-4. Visit `http://localhost:8080` in your browser
+4. Visit `http://localhost:5173` in your browser
 
 ## ⚡ Vite Usage
 
