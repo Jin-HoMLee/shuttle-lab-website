@@ -24,8 +24,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         
         if (target) {
-            const navbarElem = document.querySelector('.navbar');
-            const navHeight = navbarElem ? navbarElem.offsetHeight : 0;
+            const navHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = target.offsetTop - navHeight;
             
             window.scrollTo({
